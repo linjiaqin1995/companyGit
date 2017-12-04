@@ -108,6 +108,24 @@ git push origin 分支名
 	4 没有冲突或冲突已解决，再用git push origin branchName.
 	注意，若git pull 提示no tracking information,说明本地分支与远程分支的链接关系没有创建
 	git branch --set-upstream branchName origin/branchName
+	
+给commit打标签名，默认打在最新的commit上，加上commit-id可指定
+git tag tagName [commitId]
+查看所有标签
+git tag
+创建带有说明的标签，-a指定标签名，-m指定说明文字
+git tag -a v1.0 -m "version 1.0 released" 33213
+查看某个标签具体
+git show tagName
+删除打错的标签名
+git tag -d tagName   若是已经推送到远程，git push origin :refs/tags/tagName
+推送某个标签到远程，
+git push origin tagName
+一次性推送所有尚未推送到远程的本地标签
+git push origin --tags
+	
+配置别名，如把git status 改为输入git st 即可，
+git config --global alias.st status	
  
 
 
